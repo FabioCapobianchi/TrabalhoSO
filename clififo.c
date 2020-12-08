@@ -29,10 +29,7 @@ if(s_fifo_fd == -1){
  exit(EXIT_FAILURE);
 }
  fprintf(stderr,"\nFIFO do servidor aberto WRITE / BLOCKING");
- //
- //
- //
- //
+ 
  c_fifo_fd = open(c_fifo_fname, O_RDWR);
  if(c_fifo_fd == -1){
  perror("\nErro ao abrir o FIFO do cliente");
@@ -46,6 +43,9 @@ if(s_fifo_fd == -1){
  
  memset(perg.palavra, '\0', TAM_MAX);
  
+ 
+
+ 
  while(1){
 
 printf("\nPalavra a traduzir > ");
@@ -56,6 +56,7 @@ break;
 }
 // B) Envia a pergunta
 write(s_fifo_fd, &perg, sizeof(perg));
+
 
 // c) Obtem a resposta
 
