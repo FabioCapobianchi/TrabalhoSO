@@ -38,7 +38,7 @@ perror("\nNao foi possivel configurar o sinal SIGINT\n");
 exit(EXIT_FAILURE);
 }
 fprintf(stderr, "\nSignal SIGINT configurado");
-fprintf("\nQuero ver aqui\n");
+fprintf(stderr,"\nQuero ver aqui\n");
 
 res = mkfifo(SERVER_FIFO, 0777);
 if (res == -1){
